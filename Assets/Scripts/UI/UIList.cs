@@ -18,6 +18,7 @@ public class UIList : MonoBehaviour {
 	}
 
 
+
 	public void Populate(ArrayList info, bool extendList = false) {
 
 		if (extendList == false) {
@@ -43,7 +44,9 @@ public class UIList : MonoBehaviour {
 
 
 	public void Clear() {
-		foreach (GameObject cell in cells) Destroy(cell);
+
+		for (int i = 0; i < cells.Count; i++) Destroy (cells[i]);
+
 		cells = new List<GameObject>();
 		cellPrototype.gameObject.SetActive(false);
 	}
