@@ -73,12 +73,23 @@ namespace UIToolkit.UI {
 
 		public void SetVisible(bool isVisible) {
 			camera.enabled = isVisible;
-			foreach (Canvas canvas in canvases) {
-				canvas.enabled = isVisible;
+		
+
+			// TODO Benchmark these to see if the actually make a difference
+//			foreach (Canvas canvas in canvases) {
+//				canvas.enabled = isVisible;
+//			}
+			for (int i = 0; i < canvases.Length; i++) {
+				canvases [i].enabled = isVisible;
 			}
 
-			foreach (Graphic graphic in this.transform.GetComponentsInChildren<Graphic>()) {
-				graphic.SetAllDirty();
+//			foreach (Graphic graphic in this.transform.GetComponentsInChildren<Graphic>()) {
+//				graphic.SetAllDirty();
+//			}
+
+			Graphic[] gs = this.transform.GetComponentsInChildren<Graphic> ();
+			for (int i = 0; i < gs.Length; i++) {
+				gs[i].SetAllDirty();
 			}
 		}
 

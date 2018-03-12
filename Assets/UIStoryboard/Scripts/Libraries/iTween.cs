@@ -841,11 +841,14 @@ public class iTween : MonoBehaviour{
 		
 		//handle children:
 		if(!args.Contains("includechildren") || (bool)args["includechildren"]){
+
 			foreach(Transform child in target.transform){
 				Hashtable argsCopy = (Hashtable)args.Clone();
 				argsCopy["ischild"]=true;
 				ColorTo(child.gameObject,argsCopy);
 			}
+
+
 		}
 		
 		//set a default easeType of linear if none is supplied since eased color interpolation is nearly unrecognizable:
