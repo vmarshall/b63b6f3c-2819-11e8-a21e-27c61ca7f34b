@@ -8,11 +8,11 @@ public class UICell : MonoBehaviour, IListCell {
 	public Text text;
 
 
-	private int number;
+	private long number;
 
 
 	public void Init(object data) {
-		number = (int)(long)data;
+		number = (long)data;
 	}
 
 
