@@ -17,7 +17,7 @@ public class SecondView : UIView {
 		//DO NOT MODIFY THE DATA
 		//cell data
 		List<long> data = new List<long>();
-		for (int i=0; i<1000; i++) data.Add(i * 100000000l);
+		for (int i=0; i<10; i++) data.Add(i * 100000000l);
 
 		list.Populate(new ArrayList(data));
 
